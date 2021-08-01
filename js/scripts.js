@@ -11,6 +11,6 @@ for (let i = 0; i < pokemonList.length; i++){
 	} else if (pokemonList[i].height > 1){
 		document.write(pokemonList[i].name + 'height: .4m');
 	} else {
-		document.write(pokemonList[i].name + pokemonList[i].height);
+		document.write(pokemonList[i].name + 'height: 3.2m');
 	}
 }
