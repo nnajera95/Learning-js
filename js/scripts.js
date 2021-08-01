@@ -6,9 +6,9 @@ let pokemonList = [
 
 
 for (let i = 0; i < pokemonList.length; i++){
-	if (pokemonList[i].height <1 && pokemonList[i].height >.5){
+	if (pokemonList[i].height <2 && pokemonList[i].height >1){
 		document.write(pokemonList[i].name + pokemonList[i].height);
-	} else if (pokemonList[i].height > 3){
+	} else if (pokemonList[i].height > 1){
 		document.write(pokemonList[i].name + pokemonList[i].height);
 	} else {
 		document.write(pokemonList[i].name + pokemonList[i].height);
