@@ -1,5 +1,10 @@
+
+:root {
+	--background-color: #9BD4FD;
+}
+
 html {
-	background-color: #9BD4FD ;
+	background-color: var(--background-color) ;
 }
 
 body {
