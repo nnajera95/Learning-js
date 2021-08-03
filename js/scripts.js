@@ -6,9 +6,9 @@ let pokemonList = [
 
 
 for (let i = 0; i < pokemonList.length; i++){
-	if (pokemonList[i].height <2 && pokemonList[i].height >1){
+	if (pokemonList[i].height >3){
 		document.write(pokemonList[i].name + ' height:1.9m ');
-	} else if (pokemonList[i].height > 1){
+	} else if (pokemonList[i].height <2){
 		document.write(pokemonList[i].name + ' height:.4m ');
 	} else {
 		document.write(pokemonList[i].name + ' height:3.2m - Wow, that is big! ');
