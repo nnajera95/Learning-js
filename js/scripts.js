@@ -10,7 +10,14 @@ for (let i = 0; i < pokemonList.length; i++){
 		document.write(pokemonList[i].name + pokemonList[i].height + ' Wow, that is big! ');
 	} else if (pokemonList[i].height <2){
 		document.write(pokemonList[i].name + pokemonList[i].height);
-	} else {
-		document.write(pokemonList[i].name + pokemonList[i].height);
+	}
+}
+
+function divide(dividend, divisor){
+	if (divisor === 0){
+		return 'you are trying to divide by zero.'
+	}else{
+		let result = dividend / divisor;
+		return result;
 	}
 }
