@@ -12,12 +12,3 @@ for (let i = 0; i < pokemonList.length; i++){
 		document.write(pokemonList[i].name + ' height:' + pokemonList[i].height + 'm ');
 	}
 }
-
-function divide(dividend, divisor){
-	if (divisor === 0){
-		return 'you are trying to divide by zero.'
-	}else{
-		let result = dividend / divisor;
-		return result;
-	}
-}
