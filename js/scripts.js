@@ -3,3 +3,9 @@ let pokemonList = [
 {name: 'Arceus', height: 3.2, types: ['normal']},
 {name: 'Blaziken', height: 1.9, types: ['fire', 'fighting']}
 ];
+
+function myLoopFunction(pokemon) {
+	document.write(pokemon.name + ' height:' + pokemon.height + 'm' + '<br/>');
+}
+pokemonList.forEach(myLoopFunction);
+
