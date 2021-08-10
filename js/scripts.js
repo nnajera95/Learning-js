@@ -15,6 +15,8 @@ return {
 };
 })();
 
+let pokemonList = pokemonRepository.getAll();
+
 function myLoopFunction(pokemon) {
 	document.write(pokemon.name + ' height:' + pokemon.height + 'm' + '<br/>');
 }
