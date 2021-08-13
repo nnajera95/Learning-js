@@ -5,11 +5,19 @@ const pokemonList = [
 {name: 'Blaziken', height: 1.9, types: ['fire', 'fighting']}
 ];
 
+
+function add(pokemon) {
+    pokemonList.push(pokemon);
+  }
+
+  function getAll() {
+    return pokemonList;
+  }
+
 return {
-	add: add
-	},
+	add: add,
 	getAll: getAll
-	}
+	
 };
 })();
 
