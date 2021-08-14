@@ -26,7 +26,8 @@ const pokemonList = pokemonRepository.getAll();
 function myLoopFunction(pokemon) {
 	document.querySelector('ul')
 	let listItem = document.createElement('li')
-	let button = document.createElement('button');
+	let button = document.createElement('button')
+		button.innerText = 'pokemonList.name';
 }
 pokemonList.forEach(myLoopFunction);
 
