@@ -24,7 +24,8 @@ return {
 const pokemonList = pokemonRepository.getAll();
 
 function myLoopFunction(pokemon) {
-	document.write(pokemon.name + ' height:' + pokemon.height + 'm' + '<br/>');
+	document.querySelector('ul')
+	let listItem = document.createElement('li');
 }
 pokemonList.forEach(myLoopFunction);
 
