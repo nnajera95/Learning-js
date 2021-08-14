@@ -23,10 +23,12 @@ return {
 const pokemonList = pokemonRepository.getAll();
 
 function myLoopFunction(pokemon) {
-	document.querySelector('ul')
-	let listItem = document.createElement('li')
-	let button = document.createElement('button')
-		button.innerText = 'pokemonList.name'
+	let ul = document.querySelector('pokemon-list');
+	let listItem = document.createElement('li');
+	let newElement = document.createElement('button');
+		button.innerText = 'pokemonList.name';
 		button.classList.add('poke-name');
+		li.appendChild(button);
+		ul.appendChild(li);
 }
 pokemonList.forEach(myLoopFunction);
