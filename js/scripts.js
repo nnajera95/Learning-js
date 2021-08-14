@@ -18,6 +18,8 @@ return {
 	getAll: getAll
 	
 };
+
+function addListItem(pokemon)
 })();
 
 const pokemonList = pokemonRepository.getAll();
