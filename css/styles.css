@@ -1,0 +1,13 @@
+
+:root {
+	--background-color: #C1F2FF;
+}
+
+html {
+	background-color: var(--background-color) ;
+}
+
+body {
+	font-family: "open", sans-serif;
+	padding-left: 40px;
+}
