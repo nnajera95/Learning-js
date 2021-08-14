@@ -26,6 +26,7 @@ function myLoopFunction(pokemon) {
 	document.querySelector('ul')
 	let listItem = document.createElement('li')
 	let button = document.createElement('button')
-		button.innerText = 'pokemonList.name';
+		button.innerText = 'pokemonList.name'
+		button.classList.add('poke-name');
 }
 pokemonList.forEach(myLoopFunction);
