@@ -15,12 +15,16 @@ function add(pokemon) {
 
 return {
 	add: add,
-	getAll: getAll
-	
+	getAll: getAll	
 };
-
-function addListItem(pokemon)
 })();
 
-pokemonRepository.getAll().forEach(function (item) {
+pokemonRepository.getAll().forEach(function (pokemon) {
+	let pokemonList = document.querySelector('.pokemon-list');
+	let listpokemon = document.createElement('li');
+	let button = document.createElement('button');
+	button.innerText = pokemon.name;
+	button.classList.add('poke-name');
+	listpokemon.appendchild(button);
+	pokemonList.appendchild(listItem);
 });
