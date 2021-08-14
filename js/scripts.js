@@ -22,15 +22,5 @@ return {
 function addListItem(pokemon)
 })();
 
-const pokemonList = pokemonRepository.getAll();
-
-function myLoopFunction(pokemon) {
-	let ul = document.querySelector('pokemon-list');
-	let li = document.createElement('li');
-	let button = document.createElement('button');
-		button.innerText = 'click me';
-		button.classList.add('poke-name');
-		li.appendChild(button);
-		ul.appendChild(li);
-}
-pokemonList.forEach(myLoopFunction);
+pokemonRepository.getAll().forEach(function (item) {
+});
