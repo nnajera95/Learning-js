@@ -20,6 +20,7 @@ return {
 })();
 
 pokemonRepository.getAll().forEach(function (pokemon) {
+	pokemonRepository.addListItem(pokemon);
 	let pokemonList = document.querySelector('.pokemon-list');
 	let listpokemon = document.createElement('li');
 	let button = document.createElement('button');
