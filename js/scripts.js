@@ -13,8 +13,8 @@ function getAll() {
   return pokemonList;
 }
 
-function showDetails() {
-
+function showDetails(pokemon) {
+	console.log(pokemon);
 }
 
 function addListItem(pokemon) {
