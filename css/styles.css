@@ -16,5 +16,6 @@ body {
 .poke-name {
 	border: none;
 	display: inline-block;
+	font-family: inherit;
 	background-color: var(--button-color);
 }
