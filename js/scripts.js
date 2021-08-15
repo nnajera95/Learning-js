@@ -6,12 +6,13 @@ let pokemonList = [
 ];
 
 function add(pokemon) {
-    pokemonList.push(pokemon);
-  }
+  pokemonList.push(pokemon);
+}
 
-  function getAll() {
-    return pokemonList;
-  }
+function getAll() {
+  return pokemonList;
+}
+
 function addListItem(pokemon){
 	let pokemonList = document.querySelector('.pokemon-list');
 	let listpokemon = document.createElement('li');
@@ -21,9 +22,10 @@ function addListItem(pokemon){
 	listpokemon.appendChild(button);
 	pokemonList.appendChild(listpokemon);
 }
+
 return {
 	add: add,
-	getAll: getAll
+	getAll: getAll,
 	addListItem: addListItem
 };
 })();
