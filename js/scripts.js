@@ -22,7 +22,7 @@ function addListItem(pokemon) {
 	let listpokemon = document.createElement('li');
 	let button = document.createElement('button');
 		button.addEventListener('click', function showDetails(pokemon) {
-			console.log(event);
+			console.log(pokemon);
 		});
 	button.innerText = pokemon.name;
 	button.classList.add('poke-name');
@@ -33,6 +33,7 @@ function addListItem(pokemon) {
 return {
 	add: add,
 	getAll: getAll,
+	showDetails: showDetails,
 	addListItem: addListItem
 };
 })();
