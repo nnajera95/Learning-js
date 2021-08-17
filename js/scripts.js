@@ -33,7 +33,6 @@ function addListItem(pokemon) {
 return {
 	add: add,
 	getAll: getAll,
-	showDetails: showDetails,
 	addListItem: addListItem
 };
 })();
