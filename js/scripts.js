@@ -34,4 +34,8 @@ return {
 
 pokemonRepository.getAll().forEach(function (pokemon) {
 	pokemonRepository.addListItem(pokemon);
+<<<<<<< Updated upstream
 });
+=======
+});
+>>>>>>> Stashed changes
