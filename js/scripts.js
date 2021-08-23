@@ -17,12 +17,6 @@ function getAll() {
   return pokemonList;
 }
 
-function showDetails(pokemon) {
-  loadDetails(pokemon).then(function () {
-	   console.log(pokemon);
-   });
-}
-
 function addListItem(pokemon) {
 	let pokemonList = document.querySelector('.pokemon-list');
 	let listPokemon = document.createElement('li');
@@ -64,6 +58,12 @@ function loadDetails(item) {
   }).catch(function (e) {
     console.error(e);
   });
+}
+
+function showDetails(pokemon) {
+  pokemonRepository.loadDetails(pokemon).then(function () {
+	   console.log(pokemon);
+   });
 }
 
 return {
