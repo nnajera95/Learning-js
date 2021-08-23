@@ -6,6 +6,19 @@ function getAll() {
   return pokemonList;
 }
 
+function add(pokemon) {
+  if {
+    typeof pokemon === 'object' &&
+    'name' in pokemon &&
+    'height' in pokemon &&
+    'types' in pokemon
+} {
+  repository.push(pokemon);
+} else {
+  console.log('pokemon is not correct');
+  }
+}
+
 function showDetails(pokemon) {
   loadDetails(pokemon).then(function () {
 	   console.log(pokemon);
@@ -56,6 +69,7 @@ function loadDetails(item) {
 
 return {
 	getAll: getAll,
+  add: add,
 	addListItem: addListItem,
   loadList: loadList,
   loadDetails: loadDetails
@@ -63,7 +77,7 @@ return {
 })();
 
 pokemonRepository.loadList().then(function() {
-pokemonRepository.getAll().forEach(function (pokemon) {
-	pokemonRepository.addListItem(pokemon);
+  pokemonRepository.getAll().forEach(function (pokemon) {
+	   pokemonRepository.addListItem(pokemon);
   });
 });
