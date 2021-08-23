@@ -71,7 +71,8 @@ return {
   getAll: getAll,
 	addListItem: addListItem,
   loadList: loadList,
-  loadDetails: loadDetails
+  loadDetails: loadDetails,
+  showDetails: showDetails
 };
 })();
 
