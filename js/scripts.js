@@ -11,7 +11,9 @@ function getAll() {
 }
 
 function showDetails(pokemon) {
-	console.log(pokemon);
+  loadDetails(pokemon).then(function () {
+	   console.log(pokemon);
+   });
 }
 
 function addListItem(pokemon) {
@@ -32,7 +34,7 @@ function loadList() {
     return response.json();
   }).then(function (json) {
     json.results.forEach(function (item) {
-      let pokemon - {
+      let pokemon = {
         name: item.name,
         detailsUrl: item.url
       };
