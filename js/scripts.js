@@ -26,7 +26,7 @@ function addListItem(pokemon) {
 }
 
 function loadList() {
-  return fetch(apiUrl).then(function (item) {
+  return fetch(apiUrl).then(function (response) {
     return response.json();
   }).then(function (json) {
     json.results.forEach(function (item) {
