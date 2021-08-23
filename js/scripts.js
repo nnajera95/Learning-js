@@ -1,19 +1,17 @@
 const pokemonRepository = (function (){
-const pokemonList = [];
-let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
+  const pokemonList = [];
+  let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
 
 function getAll() {
   return pokemonList;
 }
 
 function add(pokemon) {
-  if {
+  if (
     typeof pokemon === 'object' &&
-    'name' in pokemon &&
-    'height' in pokemon &&
-    'types' in pokemon
-} {
-  repository.push(pokemon);
+    'name' in pokemon
+) {
+  pokemonList.push(pokemon);
 } else {
   console.log('pokemon is not correct');
   }
@@ -75,6 +73,8 @@ return {
   loadDetails: loadDetails
 };
 })();
+
+pokemonRepository.add({ name: 'pikachu', height: 0.3, types: ['electric'] });
 
 pokemonRepository.loadList().then(function() {
   pokemonRepository.getAll().forEach(function (pokemon) {
