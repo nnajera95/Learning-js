@@ -4,6 +4,7 @@ const pokemonList = [
 {name: 'Arceus', height: 3.2, types: ['normal']},
 {name: 'Blaziken', height: 1.9, types: ['fire', 'fighting']}
 ];
+let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
 
 function getAll() {
   return pokemonList;
@@ -26,9 +27,26 @@ function addListItem(pokemon) {
 	pokemonList.appendChild(listPokemon);
 }
 
+function loadList() {
+  return fetch(apiUrl).then(function (item) {
+    return response.json();
+  }).then(function (json) {
+    json.results.forEach(function (item) {
+      let pokemon - {
+        name: item.name,
+        detailsUrl: item.url
+      };
+      add(pokemon);
+    });
+  }).catch(function (e) {
+    console.error(e);
+  })
+}
+
 return {
 	getAll: getAll,
-	addListItem: addListItem
+	addListItem: addListItem,
+  loadList: loadList
 };
 })();
 
