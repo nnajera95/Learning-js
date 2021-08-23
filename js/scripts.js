@@ -76,8 +76,6 @@ return {
 };
 })();
 
-pokemonRepository.add({ name: 'pikachu', height: 0.3, types: ['electric'] });
-
 pokemonRepository.loadList().then(function() {
   pokemonRepository.getAll().forEach(function (pokemon) {
 	   pokemonRepository.addListItem(pokemon);
