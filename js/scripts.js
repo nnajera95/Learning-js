@@ -61,18 +61,16 @@ function loadDetails(item) {
 }
 
 function showDetails(pokemon) {
-  pokemonRepository.loadDetails(pokemon).then(function () {
+  loadDetails(pokemon).then(function () {
 	   console.log(pokemon);
    });
 }
 
 return {
-  add: add,
   getAll: getAll,
 	addListItem: addListItem,
   loadList: loadList,
   loadDetails: loadDetails,
-  showDetails: showDetails
 };
 })();
 
