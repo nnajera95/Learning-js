@@ -63,7 +63,7 @@ function loadDetails(item) {
 
 function showDetails(pokemon) {
   loadDetails(pokemon).then(function () {
-	   console.log(pokemon);
+	   showModal(pokemon)
    });
 }
 
@@ -128,7 +128,7 @@ modalContainer.addEventListener('click', (e) => {
 });
 
 document.querySelector('#show-modal').addEventListener('click', () => {
-  showModal('Modal title', 'This is the modal content!');
+  showModal(item.name, item.url);
 });
 
 //document.querySelector('#show-dialog').addEventListener('click', () => {
