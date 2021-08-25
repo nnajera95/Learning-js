@@ -95,6 +95,25 @@ function hideModal() {
   modalContainer.classList.remove('is-visible');
 }
 
+//function showDialog(title, text) {
+//  showModal(title, text);
+
+//  let modal = modalContainer.querySelector('.modal');
+
+//  let confirmButton = document.createElement('button');
+//  confirmButton.classList.add('modal-confirm');
+//  confirmButton.innerText = 'confirm';
+
+//  let cancelButton = document.createElement('button');
+//  cancelButton.classList.add('modal-cancel');
+//  cancelButton.innerText = 'cancel';
+
+//  modal.appendChild(confirmButton);
+//  modal.appendChild(cancelButton);
+
+//  confirmButton.focus();
+//}
+
 window.addEventListener('keydown', (e) => {
   if (e.key === 'Escape' && modalContainer.classList.contains ('is-visible')) {
     hideModal();
@@ -108,9 +127,13 @@ modalContainer.addEventListener('click', (e) => {
   }
 });
 
-document.querySelector('#show-modal').addEventListener('click'), () => {
+document.querySelector('#show-modal').addEventListener('click', () => {
   showModal('Modal title', 'This is the modal content!');
-};
+});
+
+//document.querySelector('#show-dialog').addEventListener('click', () => {
+  //showDialog('confirm action', 'Are you sure you want to do this?');
+//});
 
 return {
   getAll: getAll,
