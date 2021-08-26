@@ -127,9 +127,6 @@ modalContainer.addEventListener('click', (e) => {
   }
 });
 
-document.querySelector('#show-modal').addEventListener('click', () => {
-  showModal(item.name, item.url);
-});
 
 //document.querySelector('#show-dialog').addEventListener('click', () => {
   //showDialog('confirm action', 'Are you sure you want to do this?');
