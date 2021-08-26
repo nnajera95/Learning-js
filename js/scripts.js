@@ -83,12 +83,12 @@ function showModal(pokemon) {
   let contentElement = document.createElement('p');
   contentElement.innerText = pokemon.height + ' meters';
 
-  let container = document.querySelector('#image-container');
-  let myImage = document.createElement('img');
-  myImage.src = 'https://pokeapi.co/docs/v2#pokemonsprites';
 
-  container.appendChild(myImage);
-  modal.appendChild(container);
+  let myImage = document.createElement('img');
+  myImage.src = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
+
+
+  modal.appendChild(myImage);
 
   modal.appendChild(closeButtonElement);
   modal.appendChild(titleElement);
