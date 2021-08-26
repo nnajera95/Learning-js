@@ -19,7 +19,8 @@ body {
 	display: inline-block;
 	font-family: inherit;
 	background-color: var(--button-color);
-	width: auto;
+	width: 100%;
+	max-width: 400px;
 	margin-bottom: var(--pixel-value);
 	padding: 16px 32px;
 	border-radius: var(--pixel-value);
