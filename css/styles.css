@@ -19,12 +19,7 @@ body {
 	display: inline-block;
 	font-family: inherit;
 	background-color: var(--button-color);
-<<<<<<< HEAD
 	width: auto;
-=======
-	width: 100%;
-	max-width: 400px;
->>>>>>> f3f7900 (updated width of buttons)
 	margin-bottom: var(--pixel-value);
 	padding: 16px 32px;
 	border-radius: var(--pixel-value);
