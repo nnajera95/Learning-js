@@ -67,7 +67,7 @@ function showDetails(pokemon) {
    });
 }
 
-function showModal(title, text) {
+function showModal(pokemon) {
   modalContainer.innerHTML = ' ';
   let modal = document.createElement('div');
   modal.classList.add('modal');
