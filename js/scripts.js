@@ -81,7 +81,7 @@ function showModal(pokemon) {
   titleElement.innerText = pokemon.name;
 
   let contentElement = document.createElement('p');
-  contentElement.innerText = pokemon.height;
+  contentElement.innerText = pokemon.height + ' meters';
 
   modal.appendChild(closeButtonElement);
   modal.appendChild(titleElement);
