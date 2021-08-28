@@ -85,7 +85,7 @@ function showModal(pokemon) {
 
 
   let myImage = document.createElement('img');
-  myImage.src = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
+  myImage.src = pokemon.imageUrl;
 
 
   modal.appendChild(myImage);
