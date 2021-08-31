@@ -27,7 +27,7 @@ function addListItem(pokemon) {
 			showDetails(pokemon)
 			});
 	button.innerText = pokemon.name;
-	button.classList.add('poke-name');
+	button.classList.add('poke-name', 'btn-primary');
 	listPokemon.appendChild(button);
 	pokemonList.appendChild(listPokemon);
 }
