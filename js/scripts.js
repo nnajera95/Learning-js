@@ -21,6 +21,7 @@ function getAll() {
 function addListItem(pokemon) {
 	let pokemonList = document.querySelector('.pokemon-list');
 	let listPokemon = document.createElement('li');
+  let li = document.classList.add('group-list-item');
 	let button = document.createElement('button');
 		button.addEventListener('click', function() {
 			showDetails(pokemon)
@@ -83,10 +84,8 @@ function showModal(pokemon) {
   let contentElement = document.createElement('p');
   contentElement.innerText = pokemon.height + ' meters';
 
-
   let myImage = document.createElement('img');
   myImage.src = pokemon.imageUrl;
-
 
   modal.appendChild(myImage);
 
