@@ -1,7 +1,6 @@
 const pokemonRepository = (function () {
   const pokemonList = [];
   let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
-let modalContainer = document.querySelector('#modal-container');
 
   function add(pokemon) {
     if (
@@ -21,15 +20,16 @@ function getAll() {
 function addListItem(pokemon) {
 	let pokemonList = document.querySelector('.pokemon-list');
 	let listPokemon = document.createElement('li');
-    li.classList.add('group-list-item');
+    listPokemon.addClass('group-list-item');
 	let button = document.createElement('button');
 		button.addEventListener('click', function() {
 			showDetails(pokemon)
 			});
 	button.innerText = pokemon.name;
 	button.classList.add('poke-name', 'btn-primary');
-  button.setAttribute("data-toggle", "modal")
-  $(button).modal()
+  button.setAttribute('data-toggle', 'modal')
+  button.setAttribute('data-target', 'modal')
+
 	listPokemon.appendChild(button);
 	pokemonList.appendChild(listPokemon);
 }
@@ -70,76 +70,34 @@ function showDetails(pokemon) {
    });
 }
 
-function showModal(pokemon) {
-  modalContainer.innerHTML = ' ';
-  let modal = document.createElement('div');
-  modal.classList.add('modal');
+function showModal(item) {
+  let modalBody = $('.modal-body');
+  let modalTitle = $('.modal-title');
+  let modalHeader = $('.modal-header');
 
-  let closeButtonElement = document.createElement('button');
-  closeButtonElement.classList.add('modal-close');
-  closeButtonElement.innerText = 'close';
-  closeButtonElement.addEventListener('click', hideModal);
+  modalTitle.empty();
+  modalBody.empty();
 
-  let titleElement = document.createElement('h2')
-  titleElement.innerText = pokemon.name;
+  let nameElement = $('<h1>' + item.name + '</h1>');
+  let imageElementFront = $('<img class="modal-img" style="width:50%">');
+  imageElementFront.attr('src', item.imageUrlFront);
 
-  let contentElement = document.createElement('p');
-  contentElement.innerText = pokemon.height + ' meters';
+  let imageElementBack = $('<img class="modal-img" style="width:50%">');
+  imageElementBack.attr('src', item.imageUrlBack);
 
-  let myImage = document.createElement('img');
-  myImage.src = pokemon.imageUrl;
+  let heightElement = $('<p>' + 'height : ' + item.height + '</p>');
+  let weightElement = $('<p>' + 'height : ' + item.weight + '</p>');
+  let typesElement = $('<p>' + 'types : ' + item.types + '</p>');
+  let abilitiesElement = $('<p>' + 'abilities : ' + item.abilities + '</p>');
 
-  modal.appendChild(myImage);
-
-  modal.appendChild(closeButtonElement);
-  modal.appendChild(titleElement);
-  modal.appendChild(contentElement);
-  modalContainer.appendChild(modal);
-
-  modalContainer.classList.add('is-visible');
+  modalTitle.append(nameElement);
+  modalBody.append(imageElementFront);
+  modalBody.append(imageElementBack);
+  modalBody.append(heightElement);
+  modalBody.append(weightElement);
+  modalBody.append(typesElement);
+  modalBody.append(abilitiesElement);
 }
-
-function hideModal() {
-  modalContainer.classList.remove('is-visible');
-}
-
-//function showDialog(title, text) {
-//  showModal(title, text);
-
-//  let modal = modalContainer.querySelector('.modal');
-
-//  let confirmButton = document.createElement('button');
-//  confirmButton.classList.add('modal-confirm');
-//  confirmButton.innerText = 'confirm';
-
-//  let cancelButton = document.createElement('button');
-//  cancelButton.classList.add('modal-cancel');
-//  cancelButton.innerText = 'cancel';
-
-//  modal.appendChild(confirmButton);
-//  modal.appendChild(cancelButton);
-
-//  confirmButton.focus();
-//}
-
-window.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
-    hideModal();
-  }
-});
-
-modalContainer.addEventListener('click', (e) => {
-  let target = e.target;
-  if (target === modalContainer) {
-    hideModal();
-  }
-});
-
-
-//document.querySelector('#show-dialog').addEventListener('click', () => {
-  //showDialog('confirm action', 'Are you sure you want to do this?');
-//});
-
 return {
   getAll: getAll,
 	addListItem: addListItem,
