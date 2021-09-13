@@ -56,9 +56,12 @@ function loadDetails(item) {
   return fetch(url).then(function (response) {
     return response.json();
   }).then(function (details) {
-    item.imageUrl = details.sprites.front_default;
+    item.imageUrlFront = details.sprites.front_default;
+    item.imageUrlBack = details.sprites.back_default;
     item.height = details.height;
+    item.weight = details.weight;
     item.types = details.types;
+    item.abilities = details.abilities;
   }).catch(function (e) {
     console.error(e);
   });
@@ -86,7 +89,7 @@ function showModal(item) {
   imageElementBack.attr('src', item.imageUrlBack);
 
   let heightElement = $('<p>' + 'height : ' + item.height + '</p>');
-  let weightElement = $('<p>' + 'height : ' + item.weight + '</p>');
+  let weightElement = $('<p>' + 'weight : ' + item.weight + '</p>');
   let typesElement = $('<p>' + 'types : ' + item.types + '</p>');
   let abilitiesElement = $('<p>' + 'abilities : ' + item.abilities + '</p>');
 
