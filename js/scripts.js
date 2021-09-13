@@ -20,7 +20,6 @@ function getAll() {
 function addListItem(pokemon) {
 	let pokemonList = document.querySelector('.pokemon-list');
 	let listPokemon = document.createElement('li');
-    listPokemon.addClass('group-list-item');
 	let button = document.createElement('button');
 		button.addEventListener('click', function() {
 			showDetails(pokemon)
@@ -70,6 +69,7 @@ function showDetails(pokemon) {
    });
 }
 
+<<<<<<< HEAD
 function showModal(item) {
   let modalBody = $('.modal-body');
   let modalTitle = $('.modal-title');
@@ -97,6 +97,41 @@ function showModal(item) {
   modalBody.append(weightElement);
   modalBody.append(typesElement);
   modalBody.append(abilitiesElement);
+=======
+function showModal(pokemon) {
+  modalContainer.innerHTML = ' ';
+  let modal = document.createElement('div');
+  modal.classList.add('modal');
+
+  let closeButtonElement = document.createElement('button');
+  closeButtonElement.classList.add('modal-close');
+  closeButtonElement.innerText = 'close';
+  closeButtonElement.addEventListener('click', hideModal);
+
+  let titleElement = document.createElement('h2')
+  titleElement.innerText = pokemon.name;
+
+  let contentElement = document.createElement('p');
+  contentElement.innerText = pokemon.height + ' meters';
+
+
+  let myImage = document.createElement('img');
+  myImage.src = pokemon.imageUrl;
+
+
+  modal.appendChild(myImage);
+
+  modal.appendChild(closeButtonElement);
+  modal.appendChild(titleElement);
+  modal.appendChild(contentElement);
+  modalContainer.appendChild(modal);
+
+  modalContainer.classList.add('is-visible');
+}
+
+function hideModal() {
+  modalContainer.classList.remove('is-visible');
+>>>>>>> parent of ae134bd (added class for li)
 }
 return {
   getAll: getAll,
