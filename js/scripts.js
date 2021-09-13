@@ -20,19 +20,13 @@ function getAll() {
 function addListItem(pokemon) {
 	let pokemonList = document.querySelector('.pokemon-list');
 	let listPokemon = document.createElement('li');
-<<<<<<< HEAD
-=======
   let li = document.classList.add('group-list-item');
->>>>>>> parent of 258d454 (fixed added class for li)
 	let button = document.createElement('button');
 		button.addEventListener('click', function() {
 			showDetails(pokemon)
 			});
 	button.innerText = pokemon.name;
-	button.classList.add('poke-name', 'btn-primary');
-  button.setAttribute('data-toggle', 'modal')
-  button.setAttribute('data-target', 'modal')
-
+	button.classList.add('poke-name');
 	listPokemon.appendChild(button);
 	pokemonList.appendChild(listPokemon);
 }
