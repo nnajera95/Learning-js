@@ -20,6 +20,10 @@ function getAll() {
 function addListItem(pokemon) {
 	let pokemonList = document.querySelector('.pokemon-list');
 	let listPokemon = document.createElement('li');
+<<<<<<< HEAD
+=======
+  let li = document.classList.add('group-list-item');
+>>>>>>> parent of 258d454 (fixed added class for li)
 	let button = document.createElement('button');
 		button.addEventListener('click', function() {
 			showDetails(pokemon)
@@ -69,35 +73,6 @@ function showDetails(pokemon) {
    });
 }
 
-<<<<<<< HEAD
-function showModal(item) {
-  let modalBody = $('.modal-body');
-  let modalTitle = $('.modal-title');
-  let modalHeader = $('.modal-header');
-
-  modalTitle.empty();
-  modalBody.empty();
-
-  let nameElement = $('<h1>' + item.name + '</h1>');
-  let imageElementFront = $('<img class="modal-img" style="width:50%">');
-  imageElementFront.attr('src', item.imageUrlFront);
-
-  let imageElementBack = $('<img class="modal-img" style="width:50%">');
-  imageElementBack.attr('src', item.imageUrlBack);
-
-  let heightElement = $('<p>' + 'height : ' + item.height + '</p>');
-  let weightElement = $('<p>' + 'height : ' + item.weight + '</p>');
-  let typesElement = $('<p>' + 'types : ' + item.types + '</p>');
-  let abilitiesElement = $('<p>' + 'abilities : ' + item.abilities + '</p>');
-
-  modalTitle.append(nameElement);
-  modalBody.append(imageElementFront);
-  modalBody.append(imageElementBack);
-  modalBody.append(heightElement);
-  modalBody.append(weightElement);
-  modalBody.append(typesElement);
-  modalBody.append(abilitiesElement);
-=======
 function showModal(pokemon) {
   modalContainer.innerHTML = ' ';
   let modal = document.createElement('div');
@@ -131,7 +106,6 @@ function showModal(pokemon) {
 
 function hideModal() {
   modalContainer.classList.remove('is-visible');
->>>>>>> parent of ae134bd (added class for li)
 }
 return {
   getAll: getAll,
