@@ -28,7 +28,7 @@ function addListItem(pokemon) {
 	button.innerText = pokemon.name;
 	button.classList.add('poke-name', 'btn-primary');
   button.setAttribute('data-toggle', 'modal')
-  button.setAttribute('data-target', 'modal')
+  button.setAttribute('data-target', '#pokemon-modal')
 
 	listPokemon.appendChild(button);
 	pokemonList.appendChild(listPokemon);
