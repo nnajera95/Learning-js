@@ -1,4 +1,4 @@
-const pokemonRepository = (function (){
+const pokemonRepository = (function () {
   const pokemonList = [];
   let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
 
@@ -20,12 +20,16 @@ function getAll() {
 function addListItem(pokemon) {
 	let pokemonList = document.querySelector('.pokemon-list');
 	let listPokemon = document.createElement('li');
+    listPokemon.addClass('group-list-item');
 	let button = document.createElement('button');
 		button.addEventListener('click', function() {
 			showDetails(pokemon)
 			});
 	button.innerText = pokemon.name;
-	button.classList.add('poke-name');
+	button.classList.add('poke-name', 'btn-primary');
+  button.setAttribute('data-toggle', 'modal')
+  button.setAttribute('data-target', 'modal')
+
 	listPokemon.appendChild(button);
 	pokemonList.appendChild(listPokemon);
 }
@@ -61,18 +65,44 @@ function loadDetails(item) {
 }
 
 function showDetails(pokemon) {
-  pokemonRepository.loadDetails(pokemon).then(function () {
-	   console.log(pokemon);
+  loadDetails(pokemon).then(function () {
+	   showModal(pokemon)
    });
 }
 
+function showModal(item) {
+  let modalBody = $('.modal-body');
+  let modalTitle = $('.modal-title');
+  let modalHeader = $('.modal-header');
+
+  modalTitle.empty();
+  modalBody.empty();
+
+  let nameElement = $('<h1>' + item.name + '</h1>');
+  let imageElementFront = $('<img class="modal-img" style="width:50%">');
+  imageElementFront.attr('src', item.imageUrlFront);
+
+  let imageElementBack = $('<img class="modal-img" style="width:50%">');
+  imageElementBack.attr('src', item.imageUrlBack);
+
+  let heightElement = $('<p>' + 'height : ' + item.height + '</p>');
+  let weightElement = $('<p>' + 'height : ' + item.weight + '</p>');
+  let typesElement = $('<p>' + 'types : ' + item.types + '</p>');
+  let abilitiesElement = $('<p>' + 'abilities : ' + item.abilities + '</p>');
+
+  modalTitle.append(nameElement);
+  modalBody.append(imageElementFront);
+  modalBody.append(imageElementBack);
+  modalBody.append(heightElement);
+  modalBody.append(weightElement);
+  modalBody.append(typesElement);
+  modalBody.append(abilitiesElement);
+}
 return {
-  add: add,
   getAll: getAll,
 	addListItem: addListItem,
   loadList: loadList,
   loadDetails: loadDetails,
-  showDetails: showDetails
 };
 })();
 
