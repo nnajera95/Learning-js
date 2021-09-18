@@ -44,7 +44,6 @@ function loadList() {
         detailsUrl: item.url
       };
       add(pokemon);
-      console.log(pokemon);
     });
   }).catch(function (e) {
     console.error(e);
@@ -60,8 +59,14 @@ function loadDetails(item) {
     item.imageUrlBack = details.sprites.back_default;
     item.height = details.height;
     item.weight = details.weight;
-    item.types = details.types;
-    item.abilities = details.abilities;
+    item.types = [];
+           for (let i = 0; i < details.types.length; i++) {
+             item.types.push(details.types[i].type.name);
+           }
+    item.abilities = [];
+           for (let i = 0; i < details.abilities.length; i++) {
+             item.abilities.push(details.abilities[i].ability.name);
+           }
   }).catch(function (e) {
     console.error(e);
   });
@@ -90,8 +95,8 @@ function showModal(item) {
 
   let heightElement = $('<p>' + 'height : ' + item.height + '</p>');
   let weightElement = $('<p>' + 'weight : ' + item.weight + '</p>');
-  let typesElement = $('<p>' + 'types : ' + item.types + '</p>');
-  let abilitiesElement = $('<p>' + 'abilities : ' + item.abilities + '</p>');
+  let typesElement = $("<p>" + "Types : " + item.types.join(", ") + "</p>");
+  let abilitiesElement = $("<p>" + "Abilities : " + item.abilities.join(", ") + "</p>");
 
   modalTitle.append(nameElement);
   modalBody.append(imageElementFront);
