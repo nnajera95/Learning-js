@@ -3,16 +3,24 @@
 	--background-color: #C1F2FF;
 	--button-color: #FF8181;
 	--pixel-value: 10px;
+	--secondary-pixel: 40px;
 }
 
 html {
-
 }
 
 body {
 	background-color: var(--background-color);
 	font-family: "Open Sans", sans-serif;
-	padding-left: 40px;
+	padding-left: var(--secondary-pixel);
+}
+
+.navbar {
+	background-color: var(--button-color);
+	margin-bottom: var(--secondary-pixel);
+	font-family: inherit;
+	border-radius: var(--pixel-value);
+	border-bottom: 2px solid rgba(0, 0, 0, 0.3);
 }
 
 .poke-name {
