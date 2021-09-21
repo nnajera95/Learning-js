@@ -8,8 +8,6 @@ const pokemonRepository = (function () {
       'name' in pokemon
     ) {
       pokemonList.push(pokemon);
-    } else {
-      console.log('pokemon is not correct');
     }
   }
 
@@ -74,7 +72,7 @@ function loadDetails(item) {
 
 function showDetails(pokemon) {
   loadDetails(pokemon).then(function () {
-	   showModal(pokemon)
+    showModal(pokemon)
    });
 }
 
@@ -95,8 +93,8 @@ function showModal(item) {
 
   let heightElement = $('<p>' + 'height : ' + item.height + '</p>');
   let weightElement = $('<p>' + 'weight : ' + item.weight + '</p>');
-  let typesElement = $("<p>" + "Types : " + item.types.join(", ") + "</p>");
-  let abilitiesElement = $("<p>" + "Abilities : " + item.abilities.join(", ") + "</p>");
+  let typesElement = $('<p>' + 'Types : ' + item.types.join(', ') + '</p>');
+  let abilitiesElement = $('<p>' + 'Abilities : ' + item.abilities.join(', ') + '</p>');
 
   modalTitle.append(nameElement);
   modalBody.append(imageElementFront);
@@ -116,6 +114,6 @@ return {
 
 pokemonRepository.loadList().then(function() {
   pokemonRepository.getAll().forEach(function (pokemon) {
-	   pokemonRepository.addListItem(pokemon);
+    pokemonRepository.addListItem(pokemon);
   });
 });
